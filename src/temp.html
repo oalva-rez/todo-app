@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo App</title>
+  </head>
+  <body>
+    <header><h1>Todo List</h1></header>
+    <main>
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>Today</li>
+          <li>Week</li>
+        </ul>
+        <div>
+          <p>Projects</p>
+          <ul></ul>
+          <div class="add-project">+ Add Project</div>
+        </div>
+      </nav>
+      <section class="content">
+        <div class="content-header">
+          <h2 class="content-label">Home</h2>
+          <div class="due-date">Due Date</div>
+        </div>
+        <div class="task-content">
+          <ul class="task-list">
+            <li class="task-item">
+              <input type="checkbox" class="task-check" />
+              <div class="task-name">${name}</div>
+              <div class="task-date">${date}</div>
+              <input
+                type="date"
+                class="date-change visibility"
+                value="03/10/2020"
+              />
+            </li>
+            <li class="task-item">
+              <input type="checkbox" class="task-check" />
+              <div class="task-name">${name}</div>
+              <div class="task-date">${date}</div>
+              <input
+                type="date"
+                class="date-change visibility"
+                value="04/10/2022"
+              />
+            </li>
+            <li class="task-item">
+              <input type="checkbox" class="task-check" />
+              <div class="task-name">${name}</div>
+              <div class="task-date">${date}</div>
+              <input
+                type="date"
+                class="date-change visibility"
+                value="04/30/2022"
+              />
+            </li>
+            <li class="task-item">
+              <input type="checkbox" class="task-check" />
+              <div class="task-name">${name}</div>
+              <div class="task-date">${date}</div>
+              <input
+                type="date"
+                class="date-change visibility"
+                value="04/02/2022"
+              />
+            </li>
+          </ul>
+        </div>
+        <div class="add-task">+ Add Task</div>
+        <div class="task-popup visibility">
+          <div class="task-input">
+            <input
+              type="text"
+              class="data-name"
+              placeholder="Eg. 'Call client for vehicle surrender'"
+            />
+            <div class="date-input">
+              <label for="due-date">Due:</label>
+              <input type="date" id="due-date" />
+            </div>
+          </div>
+          <div class="btns">
+            <button class="add-btn">Add</button>
+            <button class="cancel-btn">Cancel</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>Copyright &copy; ozkar alvarez GIT</footer>
+  </body>
+</html>
