@@ -1,4 +1,5 @@
 import Task from "./task.js";
+import UI from "./index.js";
 
 export default class Project {
   constructor(name) {

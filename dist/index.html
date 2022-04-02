@@ -5,16 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToDo App</title>
-    <script defer src="main.4b3cc7180ef72a9df629.js"></script>
-  </head>
+  <script defer src="/main.c78ad55245dbaeb5c583.js"></script></head>
   <body>
     <header><h1>Todo List</h1></header>
     <main>
       <nav>
         <ul>
-          <li>Home</li>
-          <li>Today</li>
-          <li>Week</li>
+          <li class="home-tab">Home</li>
+          <li class="today-tab">Today</li>
+          <li class="week-tab">Week</li>
         </ul>
         <div>
           <p>Projects</p>
@@ -27,7 +26,16 @@
           <h2 class="content-label">Home</h2>
           <div class="due-date">Due Date</div>
         </div>
-        <div class="task-content"><ul class="task-list"></ul></div>
+        <div class="task-content">
+          <ul class="task-list">
+            <li class="task-item">
+              <input type="checkbox" class="task-check" />
+              <div class="task-name">Delete me!</div>
+              <div class="task-date">No date</div>
+              <input type="date" class="date-change visibility" />
+            </li>
+          </ul>
+        </div>
         <div class="add-task">+ Add Task</div>
         <div class="task-popup visibility">
           <div class="task-input">
