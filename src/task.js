@@ -1,9 +1,10 @@
 import Project from "./project";
-import { format, addDays, setDate } from "date-fns";
+import { format, addDays, setDate, isThisISOWeek } from "date-fns";
 export default class Task {
-  constructor(name, date = "No date") {
+  constructor(name, date = "No date", color = null) {
     this.name = name;
     this.date = date;
+    this.color = color;
   }
 
   getFormattedDate() {
@@ -19,7 +20,15 @@ export default class Task {
       return `${month}/${day}/${year}`;
     }
   }
-
+  setColor(color) {
+    this.color = color;
+  }
+  setFormattedDate(date) {
+    const year = date.split("-")[0];
+    const month = date.split("-")[1];
+    const day = date.split("-")[2];
+    this.date = `${month}/${day}/${year}`;
+  }
   getDateObject() {
     if (this.date === "No date") {
       return "No date";

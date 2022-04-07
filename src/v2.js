@@ -114,4 +114,3 @@ class UI {
 }
 
 UI.initBtnEvents();
-UI.initTaskItemBtns();

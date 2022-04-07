@@ -100,6 +100,3 @@ class UI {
     element.classList.toggle("visibility");
   }
 }
-
-UI.initBtnEvents();
-UI.initTaskItemBtns();

@@ -4,21 +4,41 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/c830af475b.js"
+      crossorigin="anonymous"
+    ></script>
     <title>ToDo App</title>
   </head>
   <body>
-    <header><h1>Todo List</h1></header>
     <main>
       <nav>
+        <header><h1>Todo List</h1></header>
         <ul>
-          <li class="home-tab">Home</li>
-          <li class="today-tab">Today</li>
-          <li class="week-tab">Week</li>
+          <li class="home-tab"><i class="fa-solid fa-house"></i>Home</li>
+          <li class="today-tab">
+            <i class="fa-solid fa-calendar-day"></i>Today
+          </li>
+          <li class="week-tab">
+            <i class="fa-solid fa-calendar-week"></i>Week
+          </li>
         </ul>
         <div>
           <p>Projects</p>
-          <ul></ul>
+          <ul class="project-list"></ul>
           <div class="add-project">+ Add Project</div>
+          <div class="project-popup visibility">
+            <input
+              type="text"
+              class="project-input"
+              placeholder="Eg. 'Depositions'"
+            />
+            <input type="color" class="proj-color" />
+            <div class="project-btns">
+              <button class="add-project-btn">Add</button>
+              <button class="cancel-project">Cancel</button>
+            </div>
+          </div>
         </div>
       </nav>
       <section class="content">
@@ -57,7 +77,7 @@
           </div>
         </div>
       </section>
+      <footer>Copyright &copy; ozkar alvarez GIT</footer>
     </main>
-    <footer>Copyright &copy; ozkar alvarez GIT</footer>
   </body>
 </html>

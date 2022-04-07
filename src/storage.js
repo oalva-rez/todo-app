@@ -10,6 +10,7 @@ export default class ListBinding {
   constructor(element) {
     this.listElement = element;
     this.taskData = [];
+    this.projData = [];
     this.todayData;
     this.weekData;
   }
@@ -38,7 +39,7 @@ export default class ListBinding {
   addTaskToArr(task) {
     this.taskData.push(task);
   }
-  addHTMLtoElement(html) {
-    this.listElement.innerHTML += html;
+  addProjToArr(proj) {
+    this.projData.push(proj);
   }
 }
