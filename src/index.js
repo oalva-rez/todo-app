@@ -15,11 +15,6 @@ export default class UI {
   static addProjectBtn = document.querySelector(".add-project-btn");
   static projectList = document.querySelector(".project-list");
   static cancelProjBtn = document.querySelector(".cancel-project");
-<<<<<<< Updated upstream
-
-=======
-  static hello = "hellp";
->>>>>>> Stashed changes
   static contentDOM = new ListBinding(UI.content);
   static toggleVisibility(element) {
     element.classList.toggle("visibility");
@@ -74,10 +69,6 @@ export default class UI {
       UI.projectList.append(li);
     }
   }
-<<<<<<< Updated upstream
-
-  static addTaskToProj(project) {
-=======
 
   static addTaskToProj(project) {
     let nameInput = document.querySelector(".data-name");
@@ -94,30 +85,12 @@ export default class UI {
     }
   }
   static addToTaskData(color) {
->>>>>>> Stashed changes
     let nameInput = document.querySelector(".data-name");
     let dateInput = document.querySelector("#due-date");
 
     let task;
 
     if (dateInput.value === "") {
-<<<<<<< Updated upstream
-      task = new Task(nameInput.value, "No date", project.color);
-      project.addTask(task);
-    } else {
-      task = new Task(nameInput.value, dateInput.value, project.color);
-      project.addTask(task);
-    }
-  }
-  static addToTaskData(color) {
-    let nameInput = document.querySelector(".data-name");
-    let dateInput = document.querySelector("#due-date");
-
-    let task;
-
-    if (dateInput.value === "") {
-=======
->>>>>>> Stashed changes
       task = new Task(nameInput.value, "No date", color);
       UI.contentDOM.addTaskToArr(task);
     } else {
