@@ -1,11 +1,6 @@
-// export default class Storage {
-//   addToStorage(type, dataObj) {
-//     localStorage.setItem(type, JSON.stringify(dataObj));
-//   }
-// }
 import { isToday, isThisWeek } from "date-fns";
-
 import UI from "./index.js";
+
 export default class ListBinding {
   constructor(element) {
     this.listElement = element;
