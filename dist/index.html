@@ -8,12 +8,14 @@
       src="https://kit.fontawesome.com/c830af475b.js"
       crossorigin="anonymous"
     ></script>
-    <title>ToDo App</title>
-  <script defer src="/main.ce5e17216a85c852f9bc.js"></script></head>
+    <title>WrkFlo</title>
+  <script defer src="/main.632975b77f6731ca21be.js"></script></head>
   <body>
     <main>
       <nav>
-        <header><h1>Todo List</h1></header>
+        <header>
+          <h1><i class="fa-solid fa-boxes-stacked header-icon"></i>WrkFlo</h1>
+        </header>
         <ul>
           <li class="home-tab"><i class="fa-solid fa-house"></i>Home</li>
           <li class="today-tab">
@@ -28,12 +30,7 @@
           <ul class="project-list"></ul>
           <div class="add-project">+ Add Project</div>
           <div class="project-popup visibility">
-            <input
-              type="text"
-              class="project-input"
-              placeholder="Eg. 'Depositions'"
-            />
-            <input type="color" class="proj-color" />
+            <input type="text" class="project-input" placeholder="Project" />
             <div class="project-btns">
               <button class="add-project-btn">Add</button>
               <button class="cancel-project">Cancel</button>
@@ -61,11 +58,7 @@
         </div>
         <div class="task-popup visibility">
           <div class="task-input">
-            <input
-              type="text"
-              class="data-name"
-              placeholder="Eg. 'Call client for vehicle surrender'"
-            />
+            <input type="text" class="data-name" placeholder="Task" />
             <div class="date-input">
               <label for="due-date">Due:</label>
               <input type="date" id="due-date" />

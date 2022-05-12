@@ -19,7 +19,7 @@ export default class UI {
   static toggleVisibility(element) {
     element.classList.toggle("visibility");
   }
-  static addTaskToDOM(tasks, color) {
+  static addTaskToDOM(tasks) {
     UI.contentDOM.listElement.innerHTML = "";
     for (let task of tasks) {
       let li = document.createElement("li");
@@ -36,10 +36,6 @@ export default class UI {
       dateChange.classList.add("visibility");
       checkbox.setAttribute("type", "checkbox");
       dateChange.setAttribute("type", "date");
-
-      if (color !== "") {
-        li.style.borderLeft = `solid 10px ${task.color}`;
-      }
 
       taskName.textContent = task.name;
       taskDate.textContent = task.getFormattedDate();
@@ -77,24 +73,24 @@ export default class UI {
     let task;
 
     if (dateInput.value === "") {
-      task = new Task(nameInput.value, "No date", project.color);
+      task = new Task(nameInput.value, "No date");
       project.addTask(task);
     } else {
-      task = new Task(nameInput.value, dateInput.value, project.color);
+      task = new Task(nameInput.value, dateInput.value);
       project.addTask(task);
     }
   }
-  static addToTaskData(color) {
+  static addToTaskData() {
     let nameInput = document.querySelector(".data-name");
     let dateInput = document.querySelector("#due-date");
 
     let task;
 
     if (dateInput.value === "") {
-      task = new Task(nameInput.value, "No date", color);
+      task = new Task(nameInput.value, "No date");
       UI.contentDOM.addTaskToArr(task);
     } else {
-      task = new Task(nameInput.value, dateInput.value, color);
+      task = new Task(nameInput.value, dateInput.value);
       UI.contentDOM.addTaskToArr(task);
     }
   }
@@ -108,10 +104,9 @@ export default class UI {
     listItems.forEach((e) => {
       let name = e.querySelector(".task-name");
       let date = e.querySelector(".task-date");
-      let color;
       name = name.textContent;
       date = date.textContent;
-      UI.contentDOM.taskData.push(new Task(name, date, color));
+      UI.contentDOM.taskData.push(new Task(name, date));
     });
   }
   static deleteProject(event) {
@@ -157,7 +152,7 @@ export default class UI {
       });
       projects.forEach((e) => {
         if (e.name === projectName) {
-          UI.addTaskToDOM(e.taskArr, e.color);
+          UI.addTaskToDOM(e.taskArr);
         }
       });
     }
@@ -190,11 +185,7 @@ export default class UI {
         }
       }
     } else return;
-    for (let proj of UI.contentDOM.projData) {
-      if (contentLabel === proj.name) {
-        color = proj.color;
-      }
-    }
+
     if (contentLabel.textContent === "Home") {
       UI.addTaskToDOM(UI.contentDOM.taskData, color);
     } else if (contentLabel.textContent === "Today") {
@@ -203,16 +194,10 @@ export default class UI {
       UI.addTaskToDOM(UI.contentDOM.weekData, color);
     } else {
       const contentLabel = document.querySelector(".content-label").textContent;
-
-      for (let proj of UI.contentDOM.projData) {
-        if (contentLabel === proj.name) {
-          color = proj.color;
-        }
-      }
       const projTaskArr = UI.contentDOM.projData;
       projTaskArr.forEach((e) => {
         if (contentLabel === e.name) {
-          UI.addTaskToDOM(e.taskArr, color);
+          UI.addTaskToDOM(e.taskArr);
         }
       });
     }
@@ -236,6 +221,8 @@ export default class UI {
         const newDate = `${month}/${day}/${year}`;
 
         taskDate.textContent = newDate;
+        console.log(contentLabel.textContent);
+
         if (
           contentLabel.textContent === "Home" ||
           contentLabel.textContent === "Week" ||
@@ -278,10 +265,7 @@ export default class UI {
   }
   static submitNewProject() {
     const projectInput = document.querySelector(".project-input");
-    const projColor = document.querySelector(".proj-color");
-    UI.contentDOM.addProjToArr(
-      new Project(projectInput.value, projColor.value)
-    );
+    UI.contentDOM.addProjToArr(new Project(projectInput.value));
 
     UI.toggleProjectPopUp();
 
@@ -325,24 +309,19 @@ export default class UI {
     submitTaskBtn.addEventListener("click", () => {
       const addTaskCont = document.querySelector(".append-btn");
       const contentLabel = document.querySelector(".content-label");
-      let color;
 
       if (!addTaskCont.classList.contains("visibility")) {
         UI.toggleVisibility(addTaskCont.querySelector(".add-task"));
       }
-      for (let proj of UI.contentDOM.projData) {
-        if (contentLabel.textContent === proj.name) {
-          color = proj.color;
-        }
-      }
-      UI.addToTaskData(color);
-      UI.addTaskToDOM(UI.contentDOM.taskData, color);
+
+      UI.addToTaskData();
+      UI.addTaskToDOM(UI.contentDOM.taskData);
       UI.updateTaskArr();
 
       for (let proj of UI.contentDOM.projData) {
         if (proj.name === contentLabel.textContent) {
           UI.addTaskToProj(proj);
-          UI.addTaskToDOM(proj.taskArr, proj.color);
+          UI.addTaskToDOM(proj.taskArr);
         }
       }
 

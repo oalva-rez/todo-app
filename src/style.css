@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +16,7 @@
   --border-rad: 10px;
   --pop-up-spacing: 14px;
   --input-padding: 10px;
+  --btn-color: white;
 }
 
 body {
@@ -30,11 +31,22 @@ body {
 header {
   display: flex;
   align-items: center;
+  justify-content: center;
   background-color: var(--nav-color);
+  position: relative;
 }
 
 header h1 {
   font-size: 3rem;
+  font-family: "Comfortaa", cursive;
+  color: #b6b6f3;
+  border-bottom: solid 2px white;
+}
+.header-icon {
+  color: rgb(197, 197, 197);
+  position: relative;
+  font-size: 2.4rem;
+  top: -4px;
 }
 
 /* main */
@@ -48,7 +60,7 @@ main nav {
   background-color: var(--nav-color);
   display: flex;
   flex-direction: column;
-  padding: 25px;
+  padding: 45px 35px;
   gap: 20px;
 }
 
@@ -66,16 +78,21 @@ nav {
   color: white;
   grid-area: 1 / 1 / 3 / 2;
 }
+
+nav > *:not(header) {
+  margin-top: 30px;
+}
+
 nav ul > *,
 nav p {
-  margin-bottom: 10px;
+  margin-bottom: 13px;
   list-style: none;
   padding: var(--nav-btn-padding);
   cursor: pointer;
   border-radius: var(--border-rad);
 }
 nav ul > *:hover {
-  background-color: var(--hover-color);
+  background-color: lightslategrey;
 }
 nav p {
   font-size: 2rem;
@@ -88,10 +105,13 @@ nav i {
 /* nav project */
 .project-popup {
   border-radius: var(--border-rad);
-  background-color: rgba(128, 128, 128, 0.198);
+  background-color: #f2f2f22c;
   padding: 8px;
   display: flex;
   flex-direction: column;
+}
+.add-project {
+  cursor: pointer;
 }
 .project-input {
   font-size: 1.3rem;
@@ -236,7 +256,25 @@ nav i {
   border-radius: var(--border-rad);
   outline: none;
   border: none;
+  cursor: pointer;
 }
 .date-change:hover {
   background-color: var(--hover-color);
+}
+
+.add-btn,
+.add-project-btn,
+.cancel-btn,
+.cancel-project {
+  cursor: pointer;
+  background-color: var(--btn-color);
+  border: 1px solid lightgrey;
+}
+
+.add-btn:hover,
+.add-project-btn:hover,
+.cancel-btn:hover,
+.cancel-project:hover {
+  background-color: rgb(244, 244, 244);
+  border: none;
 }
