@@ -1,7 +1,7 @@
 # To-Do App
 <p>This To-Do App was a result of further learning a modular/component approach back-boning on SOLID principles. This To-Do App allows you to add new tasks and filter
   them by 'All/Home', 'Today', 'This Week'. I also implemented the feature of being able to change the dates of the tasks after creation and reflecting the change accordingly.
-  This App allows you to create projects that hold sub tasks which also are shown and filtered by their respective home tab.</p>
+  This app allows you to create projects that hold sub tasks which also are shown and filtered by their respective home tab.</p>
   <h2>Getting Started</h2>
   <h3>Prerequisites</h3>
   <li>A web browser of your choice with JavaScript enabled.</li>
